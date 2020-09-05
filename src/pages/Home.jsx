@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import CountryItem from '../components/CountryItem'
+import Search from '../components/Search'
 
 const Home = () => {
   const [countries, setCountries] = useState([])
@@ -15,13 +16,10 @@ const Home = () => {
 
   return (
     <div className='homeContainer'>
-    {
-      countries.map((country) => {
-        return (
-          <CountryItem key={country.name} {...country} />
-        )
-      })
-    }
+      <Search />
+      {countries.map((country) => {
+        return <CountryItem key={country.name} {...country} />
+      })}
     </div>
   )
 }

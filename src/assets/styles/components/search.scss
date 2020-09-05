@@ -1,0 +1,30 @@
+.search {
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 8px;
+  background-color: $primary-color;
+  padding: 20px;
+
+  &--icon {
+    width: 24px;
+    margin: 0 30px -4px -50px;
+  }
+
+  &--label {
+    font-weight: 600;
+    border-style: none;
+    outline: none;
+
+    &::placeholder {
+      color: hsl(200, 15%, 8%);
+    }
+  }
+
+}
+
+// - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+// - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+// - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+// - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+// - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+// - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)

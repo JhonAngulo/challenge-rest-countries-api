@@ -28,10 +28,10 @@ main {
 }
 
 .homeContainer {
-  width: 80%;
   margin: 0 auto;
   overflow-y: scroll;
 }
 
 @import './components/countryItem.scss';
 @import './components/header.scss';
+@import './components/search.scss';
