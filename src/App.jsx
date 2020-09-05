@@ -1,15 +1,13 @@
 import React from 'react'
 
+import Layout from './components/Layout'
+import Home from './pages/Home'
+
 const App = () => {
   return (
-    <>
-      <h1>Colores Base</h1>
-      <div className='container'>
-        <div className='one'></div>
-        <div className='two'></div>
-        <div className='three'></div>
-      </div>
-    </>
+    <Layout>
+      <Home/>
+    </Layout>
   )
 }
 

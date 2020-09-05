@@ -78,6 +78,8 @@ module.exports = (env, { mode }) => ({
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
     compress: true,
+    useLocalIp: true,
+    host: '0.0.0.0',
     port: 9000,
   },
   plugins: mode === 'production' ? productionPlugins : developmentPlugins,

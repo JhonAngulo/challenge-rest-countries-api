@@ -1,0 +1,16 @@
+.cardCountry {
+  background-color: $primary-color;
+  width: 100%;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  
+  &--flag {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+  }
+
+  &--details {
+    padding: 12% 10%;
+    text-align: left;
+  }
+}

@@ -1,0 +1,12 @@
+.header {
+  background-color: $primary-color;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  align-items: center;
+
+  &--buttom {
+    font-weight: 600;
+  }
+}
