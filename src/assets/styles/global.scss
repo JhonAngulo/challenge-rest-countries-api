@@ -10,6 +10,12 @@ $input-color: hsl(0, 0%, 52%);
 
 $font: 'Nunito Sans', sans-serif;
 
+@mixin shadow {
+  box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);
+  -webkit-box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);
+  -moz-box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);
+}
+
 body {
   background-color: $bg-light-color;
   text-align: center;
@@ -44,3 +50,4 @@ body {
 @import './components/header.scss';
 @import './components/search.scss';
 @import './components/countryItem.scss';
+@import './components/select.scss';

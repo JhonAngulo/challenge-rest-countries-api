@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react'
 
 import CountryItem from '../components/CountryItem'
 import Search from '../components/Search'
+import Select from '../components/Select'
 
 import { useCountries } from '../hooks/useCountries'
 
 const Home = () => {
   const [countries, setCountries] = useState([])
+  const [select, setSelect] = useState({
+    selectOptions: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'],
+    defaultValue: 'Filter by Region',
+  })
   const listCountries = useCountries()
 
   useEffect(() => {
@@ -15,13 +20,16 @@ const Home = () => {
     }
   }, [listCountries])
 
-  const handleFilter = (event) => {
-    const region = event.target.value
+  const handleFilter = (region) => {
+    setSelect({
+      ...select,
+      defaultValue: region == 'All' ? 'Filter by Region' : region,
+    })
+
     const filterByRegion = listCountries.filter(
       (country) => country.region == region
     )
-    region == 'all' ? setCountries(listCountries)
-    : setCountries(filterByRegion)
+    region == 'All' ? setCountries(listCountries) : setCountries(filterByRegion)
   }
 
   const handleSearch = (event) => {
@@ -35,15 +43,7 @@ const Home = () => {
   return (
     <div className='homeContainer'>
       <Search handleSearch={handleSearch} />
-      {/* <input type='button' value='region'  /> */}
-      <select name='select' onChange={handleFilter}>
-        <option value='all' defaultValue>Filter by Region</option>
-        <option value='Africa'>Africa</option>
-        <option value='Americas'>America</option>
-        <option value='Asia'>Asia</option>
-        <option value='Europe'>Europe</option>
-        <option value='Oceania'>Oceania</option>
-      </select>
+      <Select event={handleFilter} {...select} />
       <div className='grid-container'>
         {countries.map((country) => {
           return <CountryItem key={country.name} {...country} />

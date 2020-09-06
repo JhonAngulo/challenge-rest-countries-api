@@ -1,0 +1,47 @@
+.custom_select {
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: $light-color;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  padding: 20px;
+  position: relative;
+  @include shadow;
+
+  &--label {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--icon {
+    transition: .5s ease-in-out;
+    .open & {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &.open ul {
+    display: block;
+  }
+
+  & ul {
+    border-radius: 8px;
+    background-color: $light-color;
+    display: none;
+    padding: 20px;
+    text-align: left;
+    position: absolute;
+    top: 80%;
+    left: 0;
+    list-style-type: none;
+    width: 200px;
+    z-index: 99;
+    @include shadow;
+  }
+
+  & ul li {
+    margin: 10px 0;
+  }
+}
