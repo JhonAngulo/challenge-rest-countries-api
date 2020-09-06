@@ -1,10 +1,17 @@
 .cardCountry {
-  background-color: $primary-color;
-  width: 70%;
+  background-color: $light-color;
   margin: 0 auto;
-  margin-bottom: 50px;
   border-radius: 8px;
   box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
+
+  &--link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  body.dark & {
+    background-color: $dark-color;
+  }
 
   &--flag {
     border-radius: 8px 8px 0 0;
@@ -14,7 +21,6 @@
   }
 
   &--details {
-    cursor: pointer;
     margin-top: -4px;
     padding: 9% 8%;
     text-align: left;
@@ -33,7 +39,18 @@
 
   &--title {
     font-size: 1.2rem;
+    line-height: 1.2rem;
     font-weight: 700;
     margin: 10px 0 20px 0;
   }
 }
+
+.grid-container{
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  gap: 50px;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fit, 260px);
+}
+

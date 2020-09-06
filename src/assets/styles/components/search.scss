@@ -1,28 +1,45 @@
 .search {
-  width: 80%;
+  width: 86%;
   margin: 20px auto;
   border-radius: 8px;
-  background-color: $primary-color;
+  background-color: $light-color;
   padding: 20px;
   box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);
   -webkit-box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);
   -moz-box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);
 
+  body.dark & {
+    background-color: $dark-color;
+  }
+
   &--icon {
     font-size: 18px;
     margin: 0 30px -4px -50px;
     fill: $input-color;
+
+    body.dark & {
+      fill: $light-color;
+    }
   }
 
   &--label {
-    background-color: $primary-color;
+    background-color: $light-color;
     color: $input-color;
     font-weight: 300;
     border-style: none;
     outline: none;
 
+    body.dark & {
+      background-color: $dark-color;
+      color: $light-color;
+    }
+
     &::placeholder {
       color: $input-color;
+
+      body.dark & {
+        color: $light-color;
+      }
     }
   }
 }
