@@ -1,3 +1,17 @@
+.grid-container{
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 50px;
+  display: grid;
+  gap: 50px;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, 260px);
+
+  @media (max-width: 633px){
+    justify-content: center;
+  }
+}
+
 .cardCountry {
   background-color: $light-color;
   margin: 0 auto;
@@ -44,13 +58,3 @@
     margin: 10px 0 20px 0;
   }
 }
-
-.grid-container{
-  margin: 0 auto;
-  width: 90%;
-  display: grid;
-  gap: 50px;
-  justify-content: space-evenly;
-  grid-template-columns: repeat(auto-fit, 260px);
-}
-

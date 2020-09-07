@@ -1,13 +1,23 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Context = React.createContext({})
 
-export function ContextProvider ({children}) {
-  const [countries, setCountries] = useState([])
+export function CountriesContextProvider({ children }) {
+  const [listCountries, setListCountries] = useState([])
 
-  return <Context.Provider value={{gifs, setGifs}}>
-    {children}
-  </Context.Provider>
+  useEffect(() => {
+    fetch('https://restcountries.eu/rest/v2/all')
+      .then((response) => response.json())
+      .then((response) => {
+        setListCountries(response)
+      })
+  }, [])
+
+  return (
+    <Context.Provider value={{listCountries, setListCountries }}>
+      {children}
+    </Context.Provider>
+  )
 }
 
 export default Context

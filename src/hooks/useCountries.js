@@ -1,17 +1,15 @@
-import {useEffect, useState} from 'react'
+import { useContext, useEffect } from 'react'
+import countriesContext from '../context/countriesContext'
 
-
-export function useCountries () {
-
-  const [listCountries, setListCountries] = useState([])
-
+export function useCountries() {
+  const { countries, setCountries } = useContext(countriesContext)
   useEffect(() => {
     fetch('https://restcountries.eu/rest/v2/all')
       .then((response) => response.json())
       .then((response) => {
-        setListCountries(response)
+        setCountries(response)
       })
   }, [])
 
-  return listCountries
+  return countries
 }

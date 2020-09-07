@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 
 import CountryItem from '../components/CountryItem'
 import Search from '../components/Search'
 import Select from '../components/Select'
 
-import { useCountries } from '../hooks/useCountries'
+import countriesContext from '../context/countriesContext'
 
 const Home = () => {
+  const { listCountries } = useContext(countriesContext)
+
   const [countries, setCountries] = useState([])
   const [select, setSelect] = useState({
     selectOptions: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'],
     defaultValue: 'Filter by Region',
   })
-  const listCountries = useCountries()
 
   useEffect(() => {
     if (listCountries.length > 0) {
@@ -42,8 +43,10 @@ const Home = () => {
 
   return (
     <div className='homeContainer'>
-      <Search handleSearch={handleSearch} />
-      <Select event={handleFilter} {...select} />
+      <div className='homeContainer--options'>
+        <Search handleSearch={handleSearch} />
+        <Select event={handleFilter} {...select} />
+      </div>
       <div className='grid-container'>
         {countries.map((country) => {
           return <CountryItem key={country.name} {...country} />

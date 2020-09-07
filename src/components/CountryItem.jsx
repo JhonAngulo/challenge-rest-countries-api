@@ -9,7 +9,7 @@ const CountryItem = ({ name, flag, population, region, capital }) => {
         <div className='cardCountry--details'>
           <h2 className='cardCountry--title'>{name}</h2>
           <p>
-            <strong>Population:</strong>{' '}
+            <strong>Population: </strong>
             {new Intl.NumberFormat('en-US').format(population)}
           </p>
           <p>

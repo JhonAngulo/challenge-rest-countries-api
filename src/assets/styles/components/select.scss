@@ -1,6 +1,5 @@
 .custom_select {
   width: 200px;
-  margin: 0 auto;
   border-radius: 8px;
   background-color: $light-color;
   cursor: pointer;
@@ -9,6 +8,10 @@
   padding: 20px;
   position: relative;
   @include shadow;
+
+  body.dark & {
+    background-color: $dark-color;
+  }
 
   &--label {
     display: flex;
@@ -39,9 +42,13 @@
     width: 200px;
     z-index: 99;
     @include shadow;
+
+    body.dark & {
+      background-color: $dark-color;
+    }
   }
 
   & ul li {
-    margin: 10px 0;
+    padding: 5px 0;
   }
 }
