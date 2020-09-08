@@ -12,6 +12,7 @@ const CountryDetail = ({
   topLevelDomain,
   currencies,
   languages,
+  borders
 }) => {
   const extractToString = (array) => {
     let result = array.map((item, index) =>
@@ -75,11 +76,9 @@ const CountryDetail = ({
               <strong>Border Countries:</strong>
             </p>
             <div>
-              <button className='detailCountry__button border'>France</button>
-              <button className='detailCountry__button border'>Germany</button>
-              <button className='detailCountry__button border'>
-                Netherlands
-              </button>
+              {
+                borders.map(border => <button key={`border-${border}`} className='detailCountry__button border'>{border}</button>)
+              }
             </div>
           </div>
         </div>

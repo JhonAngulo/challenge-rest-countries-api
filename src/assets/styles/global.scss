@@ -10,12 +10,6 @@ $input-color: hsl(0, 0%, 52%);
 
 $font: 'Nunito Sans', sans-serif;
 
-@mixin shadow {
-  box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);
-  -webkit-box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);
-  -moz-box-shadow: 0 2px 9px 0 rgba(0,0,0,.05);
-}
-
 body {
   background-color: $bg-light-color;
   text-align: center;
@@ -25,7 +19,6 @@ body {
   color: $text-light;
   overflow: hidden;
   font-size: 14px;
-  transition: 1s ease background-color;
 
   &.dark {
     background-color: $bg-dark-color;
@@ -42,6 +35,7 @@ body {
 
 .homeContainer {
   margin: 0 auto;
+  margin-top: 4px;
   width: 100%;
   height: 100%;
   overflow-y: scroll;
@@ -60,8 +54,10 @@ body {
 }
 
 
+@import './components/mixin.scss';
 @import './components/header.scss';
 @import './components/search.scss';
 @import './components/countryItem.scss';
 @import './components/select.scss';
 @import './components/detailCountry.scss';
+@import './components/notFound.scss';

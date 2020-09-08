@@ -11,6 +11,7 @@ export function CountriesContextProvider({ children }) {
       .then((response) => {
         setListCountries(response)
       })
+      .catch()
   }, [])
 
   return (

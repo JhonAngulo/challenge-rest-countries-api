@@ -17,6 +17,16 @@ const Detail = () => {
     return <h1>Cargando</h1>
   }
 
+  const borderNames = []
+
+  listCountries.map((country) => {
+    if (detailCountry.borders.includes(country.alpha3Code)) {
+      borderNames.push(country.name)
+    }
+  })
+
+  detailCountry.borders = borderNames
+
   return <CountryDetail {...detailCountry} />
 }
 

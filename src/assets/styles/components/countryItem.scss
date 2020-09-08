@@ -1,4 +1,4 @@
-.grid-container{
+.grid-container {
   margin: 0 auto;
   width: 90%;
   margin-bottom: 50px;
@@ -7,7 +7,7 @@
   justify-content: space-between;
   grid-template-columns: repeat(auto-fit, 260px);
 
-  @media (max-width: 633px){
+  @media (max-width: 633px) {
     justify-content: center;
   }
 }
@@ -16,6 +16,9 @@
   background-color: $light-color;
   margin: 0 auto;
   border-radius: 8px;
+  @include animationIn;
+
+
   @include shadow;
 
   &--link {
@@ -40,10 +43,10 @@
     text-align: left;
     border: 1px solid transparent;
     border-top: none;
-    transition: .8s border;
+    transition: 0.8s border;
     font-size: 0.9rem;
     line-height: 0.8rem;
-    
+
     &:hover {
       border-radius: 0 0 8px 8px;
       border: 1px solid $input-color;
