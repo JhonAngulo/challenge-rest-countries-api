@@ -1,7 +1,8 @@
 {
-  "name": "react-base",
+  "homepage": "https://github.com/JhonAngulo/challenge-rest-countries-api",
+  "name": "challenge-rest-countries-api",
   "version": "1.0.0",
-  "description": "template base for projects React with webpack",
+  "description": "challenge-rest-countries-api in React with webpack",
   "main": "index.js",
   "dependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
@@ -20,6 +21,7 @@
     "compression-webpack-plugin": "^5.0.1",
     "css-loader": "^4.2.2",
     "file-loader": "^6.1.0",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.4.1",
     "sass": "^1.26.10",
     "sass-loader": "^10.0.1",
@@ -30,16 +32,17 @@
   },
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JhonAngulo/react-base.git"
+    "url": "git+https://github.com/JhonAngulo/challenge-rest-countries-api.git"
   },
   "author": "Jhon Angulo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JhonAngulo/react-base/issues"
-  },
-  "homepage": "https://github.com/JhonAngulo/react-base#readme"
+    "url": "https://github.com/JhonAngulo/challenge-rest-countries-api/issues"
+  }
 }
