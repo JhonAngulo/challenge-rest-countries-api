@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import { CountriesContextProvider } from './context/countriesContext'
 
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Detail from './pages/Detail'
-import NotFound from './pages/NotFound'
+
 
 const App = () => {
   const changeDark = (checkedDark) => {
@@ -33,7 +33,7 @@ const App = () => {
         <Layout>
           <Switch>
             <Route path='/detail/:country' component={Detail} />
-            <Route path='*' component={Home} />
+            <Route path='/' component={Home} />
           </Switch>
         </Layout>
       </CountriesContextProvider>

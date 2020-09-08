@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const CountryDetail = ({
   name,
@@ -21,13 +21,13 @@ const CountryDetail = ({
     return result.toString()
   }
 
+  let history = useHistory()
+
   return (
     <div className='detailCountry'>
-      <Link to='/'>
-        <button className='detailCountry__button'>
+        <button className='detailCountry__button' onClick={() => history.goBack()}>
           <ion-icon name='arrow-back-outline'></ion-icon>Back
         </button>
-      </Link>
 
       <div className='detailCountry__container'>
         <img className='detailCountry__flag' src={flag} alt={`Flag ${name}`} />

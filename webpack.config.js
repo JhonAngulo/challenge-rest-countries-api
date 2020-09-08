@@ -76,7 +76,6 @@ module.exports = (env, { mode }) => ({
   devtool: false,
   devServer: {
     historyApiFallback: true,
-    hot: true,
     contentBase: path.join(__dirname, 'public'),
     compress: true,
     useLocalIp: true,
