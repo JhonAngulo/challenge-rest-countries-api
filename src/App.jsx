@@ -32,16 +32,8 @@ const App = () => {
       <CountriesContextProvider>
         <Layout>
           <Switch>
-            <Route exact strict path='/'>
-              <Home />
-            </Route>
-            <Route exact strict path='/detail/:country'>
-              <Detail />
-            </Route>
-            <Redirect to='/' />
-            <Route path='*'>
-              <NotFound />
-            </Route>
+            <Route path='/detail/:country' component={Detail} />
+            <Route path='*' component={Home} />
           </Switch>
         </Layout>
       </CountriesContextProvider>
