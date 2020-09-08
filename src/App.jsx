@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
 import { CountriesContextProvider } from './context/countriesContext'
 
@@ -38,6 +38,7 @@ const App = () => {
             <Route exact strict path='/detail/:country'>
               <Detail />
             </Route>
+            <Redirect to='/' />
             <Route path='*'>
               <NotFound />
             </Route>
