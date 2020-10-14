@@ -1,7 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 const Header = () => {
-
   const [darkMode, setDarkMode] = useState(false)
 
   const handleClick = () => {
@@ -13,13 +12,17 @@ const Header = () => {
     <header className='header'>
       <h3>Where in the world?</h3>
       <p className='header--buttom' onClick={handleClick}>
-      {
-        darkMode ?
-        <ion-icon class='header--icon' name="moon"></ion-icon>
-        :
-        <ion-icon class='header--icon' name="moon-outline"></ion-icon> 
-      }
-      Dark Mode
+        {darkMode ? (
+          <>
+            <ion-icon class='header--icon' name='moon'></ion-icon>
+            Dark Mode
+          </>
+        ) : (
+          <>
+            <ion-icon class='header--icon' name='moon-outline'></ion-icon>
+            Light Mode
+          </>
+        )}
       </p>
     </header>
   )
